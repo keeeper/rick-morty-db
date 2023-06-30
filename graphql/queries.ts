@@ -46,32 +46,19 @@ export const GET_EPISODE = `query getEpisode($episodeId: ID!) {
   }
 }`;
 
-// export const GET_FILM = `query getFilm($filmId: ID) {
-//   film(id: $filmId) {
-//     title
-//     created
-//     director
-//     openingCrawl
-//     characterConnection {
-//       characters {
-//         id
-//         name
-//       }
-//     }
-//   }
-// }`;
-
-// export const GET_CHARACTER = `query getCharacter($personId: ID) {
-//   person(id: $personId) {
-//     name
-//     birthYear
-//     eyeColor
-//     height
-//     hairColor
-//     id
-//     homeworld {
-//       id
-//       name
-//     }
-//   }
-// }`
+export const GET_EPISODES = `query getEpisodes {
+  episodes {
+    results {
+      episode
+      id
+      name
+      air_date
+      characters {
+        id
+        image
+        name
+      }
+    }
+  }
+}
+`

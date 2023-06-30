@@ -31,7 +31,7 @@ export default function Episode() {
       <p>{episodeData.episode}</p>
       
       {episodeData?.characters?.map((item) => (
-        <Link href={`/characters/${item.id}`}>
+        <Link href={`/character/${item.id}`}>
           <Image src={item.image} width={100} height={100} alt={item.name} />
           {item.name}
         </Link>

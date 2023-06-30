@@ -1,3 +1,4 @@
+import Header from '@/components/Header'
 import './globals.css'
 
 export const metadata = {
@@ -12,8 +13,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-bg text-gray">
-        <main className="flex min-h-screen flex-col items-center justify-between p-6">
+      <body className="bg-bg text-gray font-opensans min-h-screen">
+        <Header />
+        <main className="flex flex-col items-center justify-between p-6">
           <div className="container h-full mx-auto xl:px-30 max-w-2xl">
             {children}
           </div>
