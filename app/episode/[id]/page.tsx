@@ -7,7 +7,7 @@ import { usePathname } from 'next/navigation';
 import { GET_EPISODE } from '@/graphql/queries';
 import fetchData from '@/utils/fetchData';
 import getId from '@/utils/getId';
-import { Episode } from '@/types/Episode';
+import { Episode } from '@/types/TEpisode';
 
 export default function Episode() {
   const currentPageUrl  = usePathname();

@@ -1,4 +1,4 @@
-export type CharacterLocation = {
+export type TCharacterLocation = {
   name: string;
   id: string;
   dimension: string;

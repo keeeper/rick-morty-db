@@ -22,6 +22,8 @@ export const GET_CHARACTER = `query getCharacter($characterId: ID!) {
     episode {
       id
       name
+      air_date
+      episode
     }
     status
     type

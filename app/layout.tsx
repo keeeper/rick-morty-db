@@ -13,11 +13,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-bg text-gray font-opensans min-h-screen">
+      <body className="bg-bg text-mid-gray font-opensans min-h-screen">
         <Header />
         <main className="flex flex-col items-center justify-between">
           <div className="container h-full mx-auto  max-w-2xl p-4">
-            {children}
+              {children}
           </div>
         </main>
       </body>

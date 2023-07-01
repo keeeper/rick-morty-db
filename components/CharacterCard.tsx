@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Character } from '@/types/Character';
+import { Character } from '@/types/TCharacter';
 import Image from 'next/image';
 
 const CharacterCard: React.FC<Character> = ({id, image, name}) => {

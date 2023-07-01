@@ -1,4 +1,4 @@
-export type Character = {
+export type TCharacterCard = {
   id: string,
   image: string,
   name: string

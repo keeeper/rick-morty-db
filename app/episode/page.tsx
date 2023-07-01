@@ -1,15 +1,15 @@
 import EpisodeCard from '@/components/EpisodeCard';
 import { GET_EPISODES } from '@/graphql/queries';
 import fetchData from '@/utils/fetchData';
-import { Character } from '@/types/Character';
+import { TEpisode } from '@/types/TEpisode';
 
 export default async function Characters() {
   const data = await fetchData(GET_EPISODES);
   const {data: {episodes: {results}}} = data;
 
   return (
-    <section className="grid sm:grid-cols-4 grid-cols-3 gap-10">
-        {results.map((episode:Character)=>(
+    <section className="grid grid-cols-1">
+        {results.map((episode:TEpisode)=>(
           <EpisodeCard {...episode} />
         ))}
     </section>
