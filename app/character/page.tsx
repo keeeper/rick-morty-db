@@ -1,43 +1,34 @@
 "use client";
 
-import CharacterCard from '@/components/CharacterCard';
+import { useState } from 'react';
 import { GET_CHARACTERS } from '@/graphql/queries';
 import fetchData from '@/utils/fetchData';
-import { useState, useEffect, useRef } from 'react';
+import LoadedCounter from '@/components/LoadedCounter';
+import CharacterCard from '@/components/CharacterCard';
+import useInfiniteScroll from '@/hooks/useInfiniteScroll';
 
 export default function Characters() {
   const [characters, setCharacters] = useState([]);
-  const pageRef = useRef(0);
-
-  const getData = async () => {
-    const page = pageRef.current;
+  const [total, setTotal ] = useState(0);
+  useInfiniteScroll(getData, "observer-element");
+  
+  async function getData (page) {
     const data = await fetchData(GET_CHARACTERS, { page });
     const {data: {characters: { results }}} = data;
+    const {data: {characters: { info }}} = data;
     setCharacters((characters)=> [...characters, ...results]);
+    setTotal(info.count)
   }
 
-  const handleObserver = (entries) => {
-    const target = entries[0];
-    if (target.isIntersecting) {
-      pageRef.current++;
-      getData();
-    }
-  };
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(handleObserver, { threshold: 1 });
-    observer.observe(document.querySelector('.observer-element'));
-    return () => {
-      observer.disconnect();
-    };
-  }, []);
-
   return (
-    <section className="grid sm:grid-cols-4 grid-cols-3 gap-10">
+    <section>
+      <div className="grid sm:grid-cols-4 grid-cols-3 gap-10">
         {characters.map((character)=>(
           <CharacterCard key={character.id} {...character} />
         ))}
-        <div className="observer-element"></div>
+      </div>
+      {!!characters.length && !!total && (<LoadedCounter current={characters.length} total={total} />)}
+      <div className="observer-element"></div>
     </section>
   )
 }
