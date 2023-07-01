@@ -64,3 +64,12 @@ export const GET_EPISODES = `query getEpisodes {
   }
 }
 `
+
+export const GET_CHARACTER_BY_IDS = `query CharactersByIds($ids: [ID!]!) {
+  charactersByIds(ids: $ids) {
+    id
+    image
+    name
+  }
+}
+`

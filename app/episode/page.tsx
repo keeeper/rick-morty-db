@@ -10,7 +10,7 @@ export default async function Characters() {
   return (
     <section className="grid grid-cols-1">
         {results.map((episode:TEpisode)=>(
-          <EpisodeCard {...episode} />
+          <EpisodeCard key={episode.id} {...episode} />
         ))}
     </section>
   )

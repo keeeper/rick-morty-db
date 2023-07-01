@@ -3,7 +3,7 @@ import { TCharacterCard } from '@/types/TCharacterCard';
 import Image from 'next/image';
 
 const CharacterCard: React.FC<TCharacterCard> = ({size, id, image, name}) => {
-  const imageSize = size === "sm" ? 100 : 260;
+  const imageSize = size === "sm" ? 120 : 260;
 
   return (
     <div className="text-center text-sm hover:text-white transition">

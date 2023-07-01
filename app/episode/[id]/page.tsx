@@ -35,7 +35,7 @@ export default function Episode() {
         <h3 className="text-md text-white font-bold mb-4">Characters</h3>
         <div className="grid sm:grid-cols-6 grid-cols-4 gap-4">
           {episodeData?.characters?.map((item:TCharacterCard) => (
-            <CharacterCard size="sm" {...item} />
+            <CharacterCard key={item.id} size="sm" {...item} />
           ))}
         </div>
       </>
