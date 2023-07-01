@@ -8,7 +8,7 @@ export default async function Home() {
   const {data: {characters: {results}}} = data;
 
   return (
-    <section className="grid sm:grid-cols-4 grid-cols-3 gap-10">
+    <section className="grid sm:grid-cols-4 grid-cols-1 gap-10">
         {results.map((character:Character)=>(
           <CharacterCard {...character} />
         ))}

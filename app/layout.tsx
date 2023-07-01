@@ -16,7 +16,7 @@ export default function RootLayout({
       <body className="bg-bg text-gray font-opensans min-h-screen">
         <Header />
         <main className="flex flex-col items-center justify-between">
-          <div className="container h-full mx-auto  max-w-2xl p-6">
+          <div className="container h-full mx-auto  max-w-2xl p-4">
             {children}
           </div>
         </main>
