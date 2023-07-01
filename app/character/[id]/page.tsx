@@ -11,7 +11,7 @@ import { TCharacter } from '@/types/TCharacter';
 export default function CharacterPage() {
   const currentPageUrl  = usePathname();
   const characterId = getId(currentPageUrl);
-  const [personData, setPersonData] = useState<TCharacter>({});
+  const [personData, setPersonData] = useState<TCharacter>();
 
   const getData = async () => {
     const data = await fetchData(GET_CHARACTER, { characterId }); 

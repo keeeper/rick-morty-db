@@ -8,7 +8,7 @@ export type TCharacter = {
   image: string,
   location?: TCharacterLocation,
   gender?: string,
-  episode?: TEpisode,
+  episode?: TEpisode[],
   status?: string,
   type?: string,
   species?: string,

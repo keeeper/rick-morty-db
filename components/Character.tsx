@@ -1,9 +1,8 @@
 import { TCharacter } from '@/types/TCharacter';
-import { TEpisode } from '@/types/TEpisode';
 import Image from 'next/image';
 import EpisodeCard from './EpisodeCard';
 
-const Character:React.FC<TCharacter> = ({name, image, gender, status, location, origin, species, episode}) => {
+const Character:React.FC<TCharacter> = ({name, image, gender, status, location, origin, species, episode: episodes}) => {
     return (
       <>
         <h1 className="text-4xl text-white font-bold mb-8">{name}</h1>
@@ -21,7 +20,7 @@ const Character:React.FC<TCharacter> = ({name, image, gender, status, location, 
         </div>
         <div className="mt-6">
           <h3 className="text-md text-white font-bold mb-4">Episodes</h3>
-          {episode?.map((item:TEpisode) => <EpisodeCard key={item.id} size="sm" {...item} />)}
+          {episodes?.map((item) => <EpisodeCard key={item.id} size="sm" {...item} />)}
         </div>
       </>
     );

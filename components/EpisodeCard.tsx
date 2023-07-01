@@ -1,8 +1,7 @@
 import Link from 'next/link';
-import { Episode } from '@/types/TEpisode';
+import { TEpisode } from '@/types/TEpisode';
 
-const EpisodeCard: React.FC<Episode> = ({id, episode, name, air_date, size}) => {
-
+const EpisodeCard: React.FC<TEpisode> = ({id, episode, name, air_date, size}) => {
   return (
     <div className={size==="sm" ? 'text-xs' : 'text-sm'}>
       <Link href={`/episode/${id}`} key={name} className={`flex justify-between border-b-light-gray border-b ${size==="sm" ? 'p-2' : 'p-5'}  hover:bg-header transition`}>
