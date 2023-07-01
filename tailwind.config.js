@@ -11,9 +11,9 @@ module.exports = {
         opensans: ['Open Sans', 'sans-serif'],
       },
       colors: {
-        'primary': '#1B3FFB',
-        'secondary': '#DA4167',
-        'accent': '#083D77',
+        'primary': '#F14F38',
+        'secondary': '#E0482A',
+        'accent': '#80C60C',
         'bg': '#191919',
         'header': '#141414',
         'mid-gray': '#8e8e8e',

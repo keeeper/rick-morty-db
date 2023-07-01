@@ -1,9 +1,16 @@
-export const GET_CHARACTERS = `query getCharacters {
-  characters {
+export const GET_CHARACTERS = `query getCharacters($page: Int) {
+  characters(page: $page) {
     results {
       id
       image
       name
+      species
+    }
+    info {
+      count
+      pages
+      next
+      prev
     }
   }
 }`;
