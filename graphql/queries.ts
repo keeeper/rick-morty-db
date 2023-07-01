@@ -8,9 +8,6 @@ export const GET_CHARACTERS = `query getCharacters($page: Int) {
     }
     info {
       count
-      pages
-      next
-      prev
     }
   }
 }`;
@@ -55,8 +52,8 @@ export const GET_EPISODE = `query getEpisode($episodeId: ID!) {
   }
 }`;
 
-export const GET_EPISODES = `query getEpisodes {
-  episodes {
+export const GET_EPISODES = `query getEpisodes($page: Int) {
+  episodes(page: $page) {
     results {
       episode
       id
@@ -67,6 +64,9 @@ export const GET_EPISODES = `query getEpisodes {
         image
         name
       }
+    }
+    info {
+      count
     }
   }
 }
