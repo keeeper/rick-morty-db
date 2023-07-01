@@ -1,18 +1,18 @@
 "use client";
 
 import { useEffect, useState } from 'react';
-import Image from 'next/image'
-import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { GET_EPISODE } from '@/graphql/queries';
 import fetchData from '@/utils/fetchData';
 import getId from '@/utils/getId';
-import { Episode } from '@/types/TEpisode';
+import { TEpisode } from '@/types/TEpisode';
+import CharacterCard from '@/components/CharacterCard';
+import { TCharacterCard } from '@/types/TCharacterCard';
 
 export default function Episode() {
   const currentPageUrl  = usePathname();
   const episodeId = getId(currentPageUrl);
-  const [episodeData, setEpisodeData] = useState({});
+  const [episodeData, setEpisodeData] = useState<TEpisode>({});
 
   const getData = async () => {
     const data = await fetchData(GET_EPISODE, {episodeId});
@@ -25,17 +25,20 @@ export default function Episode() {
   }, [episodeId])
 
   return (
-    <section className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>{episodeData.name}</h1>
-      <p>{episodeData.air_date}</p>
-      <p>{episodeData.episode}</p>
-      
-      {episodeData?.characters?.map((item) => (
-        <Link href={`/character/${item.id}`}>
-          <Image src={item.image} width={100} height={100} alt={item.name} />
-          {item.name}
-        </Link>
-      ))}
+    <section>
+      <div className="mb-8">
+        <h1 className="text-4xl text-white font-bold mb-2">{episodeData.name}</h1>
+        <p className="text-sm text-gray">{episodeData.air_date}</p>
+        <p className="text-sm text-gray">{episodeData.episode}</p>
+      </div>
+      <>
+        <h3 className="text-md text-white font-bold mb-4">Characters</h3>
+        <div className="grid sm:grid-cols-6 grid-cols-4 gap-4">
+          {episodeData?.characters?.map((item:TCharacterCard) => (
+            <CharacterCard size="sm" {...item} />
+          ))}
+        </div>
+      </>
     </section>
   )
 }

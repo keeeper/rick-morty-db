@@ -4,7 +4,7 @@ import Nav from '@/constants/nav';
 
 const Header = () => {
   return (
-    <header className="mb-14 p-4 bg-header sticky top-0">
+    <header className="mb-14 p-4 bg-header sticky top-0 z-10">
       <div className="flex justify-between items-center mx-auto max-w-5xl">
         <Link href="/">
           <Image src="/images/logo.svg" alt="Rick and Morty logo" width={180} height={55} priority={true} />
