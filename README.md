@@ -8,7 +8,7 @@ Simple NextJs app dedicated to television show "Rick and Morty". Here you may fi
 - TailwindCss
 
 ## Live demo
-[rick-morty-portal.vercel.app](rick-morty-portal.vercel.app)
+[rick-morty-portal.vercel.app](https://rick-morty-portal.vercel.app)
 
 ## Data source
 Open GraphQL API [https://rickandmortyapi.com/graphql](https://rickandmortyapi.com/graphql)
