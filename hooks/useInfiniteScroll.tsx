@@ -17,7 +17,6 @@ const useInfiniteScroll = (callback, observerElement) => {
       callback(pageRef.current)
     }
   };
-  return pageRef.current;
 }
 
 export default useInfiniteScroll;
